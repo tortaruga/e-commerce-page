@@ -5,40 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+   </style>
 </head>
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+<nav>
+  <div class="group">
+    <button id="open-menu" type="menu">
+      <img src="./images/icon-menu.svg" alt="open menu icon">
+    </button>
+    <img id="logo" src="./images/logo.svg" alt="logo of the site consisting, very creatively, in the word 'sneakers' in black">
+    <ul id="desktop-menu">
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+     </ul>
+  </div>
 
-  Sneaker Company
+   <div class="group">
+    <button type="button" id="cart">
+      <img src="./images/icon-cart.svg" alt="icon of shopping kart">
+      <div class="cart-num-icon"></div>    
+    </button>
+  <!-- content to be displayed when cart is clicked -->
+    <div class="cart-menu">
+      <div class="empty">
+       <h2>Cart</h2>
+       <div class="details">
+         <p id="empty-cart-description">Your cart is empty.</p>
+       </div>
+      </div>
 
-  Fall Limited Edition Sneakers
+      <div class="full hide">
+       <h2>Cart</h2>
+     <div class="details">
+       <img id="item-pic-cart" src="./images/image-product-1-thumbnail.jpg" alt="miniature picture of item added to cart">
+       <div class="group">
+         <p id="item-name">Fall Limited Edition Sneakers</p>
+         <p><span id="price">$125.00</span> x <span id="quantity"></span><span id="total"></span></p>
+       </div>
+       <button id="delete-cart" type="button">
+         <img src="./images/icon-delete.svg" alt="delete item icon">
+       </button>
+     </div>
+     <button type="button" id="checkout">Checkout</button>
+   </div>  
+      </div>
+      <!-- end of cart content -->
+    <button type="button" id="user-avatar">
+      <img src="./images/image-avatar.png" alt="user avatar">
+    </button>
+   </div>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+   <div class="mobile-menu-wrapper">
+    <dialog id="menu-modal">
+    <button type="menu" id="close-menu">
+      <img src="./images/icon-close.svg" alt="icon close menu">
+    </button>
 
-  $125.00
-  50%
-  $250.00
+    <ul id="mobile-menu">
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+     </ul>
+    </dialog>
+   </div> 
+</nav>
 
-  0
-  Add to cart
+  <main>
+  <section class="product-photos">
+   <div class="photo-display">
+    <img id="main-photo" src="./images/image-product-1.jpg" alt="picture of sneakers">
+    <div class="scroll-btns">
+      <button id="prev-btn" type="button"></button>
+      <button id="next-btn" type="button"></button>
+    </div>
+    <div class="photo-gallery">
+      <img tabindex="0" src="./images/image-product-1-thumbnail.jpg" alt="photo of some sneakers">
+      <img tabindex="0" src="./images/image-product-2-thumbnail.jpg" alt="photo of some sneakers">
+      <img tabindex="0" src="./images/image-product-3-thumbnail.jpg" alt="photo of some sneakers">
+      <img tabindex="0" src="./images/image-product-4-thumbnail.jpg" alt="photo of some sneakers">
+    </div>
+   </div>
+  </section>
+
+  <section class="product-details">
+    <p id="company">Sneaker Company</p>
+    <h1 id="product-name">Fall Limited Edition Sneakers</h1>
+    <p id="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+  <div class="pricing-details">
+   <p id="current-price">$125.00 <span id="discount">50%</span></p>
+   <div><p id="original-price">$250.00</p></div>
+  </div>
+  <div class="btn-group">
+  <div class="quantity">
+    <button type="button" id="select-less"></button>
+    <span id="quantity-selected">0</span>
+    <button type="button" id="select-more"></button>
+  </div>
+  <button type="button" id="add-to-cart-btn">
+    <img src="./images/icon-cart-black.svg" alt="icon of a shopping cart">Add to cart</button>
+  </div>
+  </section>
+
+<!-- modal for when main image is clicked on desktop -->
+<dialog id="lightbox">
+  <button id="close-lightbox">X</button>
+    <div class="photo-display">
+      <div class="scroll-btns-lightbox">
+        <button id="prev-btn-lightbox" type="button"></button>
+        <button id="next-btn-lightbox" type="button"></button>
+      </div>
+     <img id="main-photo-lightbox" src="./images/image-product-1.jpg" alt="picture of sneakers">
+     <div class="photo-gallery">
+       <img tabindex="0" src="./images/image-product-1-thumbnail.jpg" alt="photo of some sneakers">
+       <img tabindex="0" src="./images/image-product-2-thumbnail.jpg" alt="photo of some sneakers">
+       <img tabindex="0" src="./images/image-product-3-thumbnail.jpg" alt="photo of some sneakers">
+       <img tabindex="0" src="./images/image-product-4-thumbnail.jpg" alt="photo of some sneakers">
+     </div>
+    </div>
+</dialog>
+  </main>
   
+<footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">tortaruga</a>.
   </div>
+</footer>
 </body>
 </html>
